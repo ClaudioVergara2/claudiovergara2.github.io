@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portafolio de Claudio Vergara L.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Portafolio de Claudio Vergara L." />
+</head>
+<body class="bg-gray-900 text-gray-100 antialiased leading-relaxed">
+  <header class="bg-gradient-to-r from-gray-800 via-gray-900 to-black sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="text-xl font-bold tracking-tight">CV<span class="text-indigo-400">.</span></a>
+        <ul class="hidden md:flex items-center gap-4 text-sm opacity-80">
+            <li><a href="#sobremi" class="transition-colors duration-300 hover:text-indigo-400">Sobre mí</a></li>
+            <li><a href="#experiencia" class="transition-colors duration-300 hover:text-indigo-400">Experiencia</a></li>
+            <li><a href="#proyectos" class="transition-colors duration-300 hover:text-indigo-400">Proyectos</a></li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/claudiovergara2" target="_blank" aria-label="GitHub" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-xl">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/claudiovergara1/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"class="text-gray-400 hover:text-white text-xl transition-transform duration-200 hover:scale-110">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <button id="downloadResume" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded-md text-sm">Descargar CV</button>
+      </div>
+    </nav>
+  </header>
+  <main class="max-w-6xl mx-auto p-6">
+    <!-- Title -->
+    <section id="hero" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center py-10 md:py-32">
+    <div class="md:col-span-2">
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight"><span class="text-indigo-400">Claudio Vergara L.</span></h1>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Desarrollador Full Stack</h1>
+        <br>
+        <div class="mt-6 flex gap-3">
+        <a href="#proyectos" class="inline-block bg-indigo-600 px-4 py-2 rounded-md text-sm font-medium transform transition-all duration-300 hover:bg-indigo-500 hover:scale-105 hover:shadow-lg">
+            Ver proyectos
+        </a>
+        </div>
+        <!-- Skills -->
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm text-gray-200">
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-yellow-400 hover:text-black">JavaScript</span>
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-blue-500 hover:text-white">CSS</span>
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-indigo-600 hover:text-white">PHP</span>
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-orange-600 hover:text-white">HTML5</span>
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-red-600 hover:text-white">Laravel</span>
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-blue-600 hover:text-white">WordPress</span>
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-purple-600 hover:text-white">Bootstrap</span>
+            <span class="bg-gray-800 px-2 py-1 rounded transition-colors duration-300 hover:bg-cyan-400 hover:text-black">Tailwind CSS</span>
+        </div>
+    </div>
+    <aside class="flex flex-col items-center gap-4">
+        <img src="resources/img/profile.png" alt="Avatar" class="w-45 h-45 rounded-full object-cover avatar-shadow">
+        <p class="text-center text-sm text-gray-300">Ingeniería de Ejecución en Computación e Informática</p>
+        <div class="flex gap-2">
+            <a aria-label="GitHub" href="https://github.com/claudiovergara2" target="_blank" rel="noopener noreferrer"
+            class="px-3 py-1 border rounded text-gray-300 border-gray-500 transition-all duration-300 hover:bg-black hover:text-white hover:border-black">
+            GitHub
+            </a>
+            <a aria-label="LinkedIn" href="https://www.linkedin.com/in/claudiovergara1/" target="_blank" rel="noopener noreferrer"
+            class="px-3 py-1 border rounded text-gray-300 border-gray-500 transition-all duration-300 hover:bg-white hover:text-black hover:border-white">
+            LinkedIn
+            </a>
+        </div>
+    </aside>
+    </section>
+    <br>
+    <!-- Sobre mí -->
+    <section id="sobremi" class="bg-gray-800 rounded-lg p-6 mt-8">
+      <h2 class="text-2xl font-semibold">Sobre mí</h2>
+      <p class="mt-3 text-gray-300">Soy ingeniero apasionado por crear soluciones digitales que combinan diseño funcional y rendimiento técnico. 
+        Me especializo en desarrollo web, interfaces responsivas y optimización de sistemas, siempre buscando experiencias eficientes y accesibles. 
+        He trabajado en instituciones, pymes y empresas tecnológicas, liderando proyectos, equipos y compartiendo conocimientos para generar impacto real.</p>
+
+      <div class="mt-4 grid md:grid-cols-3 gap-4">
+        <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded">
+          <h3 class="font-semibold">Sistemas Linux</h3>
+          <p class="text-sm text-gray-300 mt-2">Servidores web, seguridad, gestión de accesos, administración de bases de datos, 
+            gestión de redes, gestión de paquetes y actualizaciones (Ubuntu y Debian)</p>
+        </div>
+        <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded">
+          <h3 class="font-semibold">Mantenimiento de Computadoras</h3>
+          <p class="text-sm text-gray-300 mt-2">Ensamblaje y mantenimiento preventivo y correctivo de ordenadores</p>
+        </div>
+        <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded">
+          <h3 class="font-semibold">Herramientas y Plataformas</h3>
+          <p class="text-sm text-gray-300 mt-2">Visual Studio, VS Code, Android Studio, Apache NetBeans, Laravel, Bootstrap, Git + GitHub, 
+            SQL Server, MySQL, phpMyAdmin, Xampp, Apache, VMware, Oracle Cloud, AWS, Postman, Pentaho, Power BI, FileZilla, WordPress, Elementor, Divi, 
+            SEO, Google Analytics, Moodle</p>
+        </div>
+      </div>
+    </section>
+    <!-- Experiencia -->
+    <section id="experiencia" class="mt-8">
+        <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-semibold">Experiencia</h2>
+        </div>
+        <div class="mt-4 grid md:grid-cols-3 gap-4">
+            <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+                <h3 class="text-sm text-gray-300 mt-2"><strong>Ingeniero Informático</strong></h3>
+                <h2 class="text-sm text-gray-300 mt-2">Ago - Dic 2024</h2>
+                <p class="text-sm text-gray-300 mt-2">
+                    En el Centro de Formación y Recursos Didácticos (CFRD), trabajé como programador, desarrollando y manteniendo los sitios web de las facultades de la Universidad de Concepción. 
+                    Además, me encargué de revisar y gestionar la base de datos asociada, así como de realizar la migración de hosting a una nueva plataforma.
+                </p>
+            </div>
+            <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+                <h3 class="text-sm text-gray-300 mt-2"><strong>Ingeniero en computación Freelance</strong></h3>
+                <h2 class="text-sm text-gray-300 mt-2">Mar - Jul 2024</h2>
+                <p class="text-sm text-gray-300 mt-2">
+                    Reparación y mantenimiento de computadores, incluyendo diagnóstico de fallas de hardware y software. Optimización del rendimiento del sistema e instalación de sistemas operativos y programas según las necesidades del cliente.
+                </p>
+            </div>  
+            <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+                <h3 class="text-sm text-gray-300 mt-2"><strong>Programador informático</strong></h3>
+                <h2 class="text-sm text-gray-300 mt-2">Feb - Feb 2024</h2>
+                <p class="text-sm text-gray-300 mt-2">
+                    Participé en el equipo de desarrollo de KGB Logistic, contribuyendo a la optimización del rendimiento y mejoras funcionales de su sitio web.
+                </p>
+            </div>
+            <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+                <h3 class="text-sm text-gray-300 mt-2"><strong>Personal de Sporote TI</strong></h3>
+                <h2 class="text-sm text-gray-300 mt-2">Ene - Feb 2024</h2>
+                <p class="text-sm text-gray-300 mt-2">
+                    Servicio de Soporte TI para las empresas que conforman SETOP S.A: Socosep, Industone, Innocon, KGB Logistic, Indugras, Mar Fusión, Cosal, Rov S.A.C, Setop Trading y Tralca.
+                </p>
+            </div>
+            <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+                <h3 class="text-sm text-gray-300 mt-2"><strong>Programador informático</strong></h3>
+                <h2 class="text-sm text-gray-300 mt-2">Nov - Nov 2023</h2>
+                <p class="text-sm text-gray-300 mt-2">
+                    En el proyecto de título ConceUncover me incorpore de forma autonoma al equipo de desarrollo. 
+                </p>
+            </div>
+            <div class="p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+                <h3 class="text-sm text-gray-300 mt-2"><strong>Jefe de Proyecto y Programador</strong></h3>
+                <h2 class="text-sm text-gray-300 mt-2">Ago - Nov 2023</h2>
+                <p class="text-sm text-gray-300 mt-2">
+                    Programe un sitio web de comercio electrónico para la pyme IHPE LTDA. Asumí los roles de Jefe de Proyecto y Desarrollador, liderando un equipo de cuatro integrantes.
+                </p>
+            </div>
+        </div>
+    </section>
+    <div class="my-12 border-t border-gray-700"></div>
+    <!-- Proyectos -->
+    <section id="proyectos" class="mt-8">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-semibold">Proyectos</h2>   
+      </div>
+      <div id="projectsGrid" class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      </div>
+      <div id="projectsError" class="hidden mt-4 text-red-400"></div>
+    </section>  
+    <br><br>
+    <!-- Footer -->
+  <footer class="w-full text-center text-sm text-gray-400 py-6 footer-bg">
+    <div class="flex justify-center gap-4 mb-2">
+      <a href="https://github.com/claudiovergara2" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white text-xl transition-colors duration-300">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/claudiovergara1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-white text-xl transition-colors duration-300">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+    </div>
+    <div>© <span id="year"></span> Claudio Vergara L.</div>
+  </footer>
+<script src="main.js"></script>
+</body>
+</html>

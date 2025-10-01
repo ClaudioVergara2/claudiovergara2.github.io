@@ -1,0 +1,23 @@
+:root {
+  --accent: #7c3aed;
+}
+
+.avatar-shadow {
+  box-shadow: 0 8px 30px rgba(44, 6, 78, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.footer-bg {
+  background-color: rgb(30, 39, 52);
+}
+
+.footer-bg {
+  background-color: rgb(30, 39, 52);
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px; 
+  border-bottom-right-radius: 32px;
+}
