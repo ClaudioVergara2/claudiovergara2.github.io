@@ -6,14 +6,14 @@
   <title>Portafolio de Claudio Vergara L.</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="Portafolio de Claudio Vergara L." />
 </head>
 <body class="bg-gray-900 text-gray-100 antialiased leading-relaxed">
   <header class="bg-gradient-to-r from-gray-800 via-gray-900 to-black sticky top-0 z-50">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
       <div class="flex items-center gap-4">
-        <a href="#inicio" class="text-xl font-bold tracking-tight">CV<span class="text-indigo-400">.</span></a>
+        <a href="#inicio" class="hidden md:block text-xl font-bold tracking-tight">CV<span class="text-indigo-400">.</span></a>
         <ul class="hidden md:flex items-center gap-4 text-sm opacity-80">
             <li><a href="#sobremi" class="transition-colors duration-300 hover:text-indigo-400">Sobre mí</a></li>
             <li><a href="#experiencia" class="transition-colors duration-300 hover:text-indigo-400">Experiencia</a></li>
@@ -24,11 +24,20 @@
         <a href="https://github.com/claudiovergara2" target="_blank" aria-label="GitHub" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-xl">
             <i class="fa-brands fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/claudiovergara1/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"class="text-gray-400 hover:text-white text-xl transition-transform duration-200 hover:scale-110">
+        <a href="https://www.linkedin.com/in/claudiovergara1/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-xl transition-transform duration-200 hover:scale-110">
             <i class="fa-brands fa-linkedin-in"></i>
         </a>
         <button id="downloadResume" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded-md text-sm">Descargar CV</button>
       </div>
+      <!-- MENÚ MÓVIL -->
+      <button id="menuButton" class="md:hidden text-gray-400 hover:text-white focus:outline-none absolute left-4" aria-label="Menú">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+      <ul id="mobileMenu" class="hidden flex-col gap-4 text-sm mt-4 md:hidden bg-gray-900 p-4 rounded-lg absolute top-16 left-4 right-4 shadow-lg z-40">
+        <li><a href="#sobremi" class="transition-colors duration-300 hover:text-indigo-400">Sobre mí</a></li>
+        <li><a href="#experiencia" class="transition-colors duration-300 hover:text-indigo-400">Experiencia</a></li>
+        <li><a href="#proyectos" class="transition-colors duration-300 hover:text-indigo-400">Proyectos</a></li>
+      </ul>  
     </nav>
   </header>
   <main class="max-w-6xl mx-auto p-6">
@@ -173,6 +182,7 @@
 <button id="backToTop" class="hidden fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 transition-colors text-xl" aria-label="Volver arriba">
   <i class="fa-solid fa-circle-up"></i>
 </button>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
+<script src="js/mobile.js"></script>
 </body>
 </html>
