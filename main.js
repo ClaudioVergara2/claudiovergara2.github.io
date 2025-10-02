@@ -14,6 +14,21 @@ document.getElementById('downloadResume').addEventListener('click', () => {
   }
 });
 
+// Botón Scroll to Top
+const btn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    btn.classList.remove('hidden');
+  } else {
+    btn.classList.add('hidden');
+  }
+});
+
+btn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Manejo de errores generales
 function safeJSONParse(str) {
   try {
