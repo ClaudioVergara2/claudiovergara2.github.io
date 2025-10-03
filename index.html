@@ -182,7 +182,19 @@
 <button id="backToTop" class="hidden fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 transition-colors text-xl" aria-label="Volver arriba">
   <i class="fa-solid fa-circle-up"></i>
 </button>
-<script src="js/main.js"></script>
+<!-- Accesibilidad -->
+<button id="accessibilityBtn" class="fixed top-40 right-0 bg-indigo-600 text-white p-3 rounded shadow-lg" aria-label="Accesibilidad">
+  <i class="fa-solid fa-universal-access"></i>
+</button>
+<div id="accessibilityPanel" class="hidden fixed top-40 right-12 bg-gray-900 text-white p-4 rounded shadow-lg z-50 w-48 border border-indigo-500">
+  <h3 class="font-semibold mb-2">Accesibilidad</h3>
+  <button class="w-full mb-2 bg-indigo-600 hover:bg-indigo-500 p-2 rounded text-sm" id="increaseFont">Aumentar fuente</button>
+  <button class="w-full mb-2 bg-indigo-600 hover:bg-indigo-500 p-2 rounded text-sm" id="decreaseFont">Disminuir fuente</button>
+  <button class="w-full mb-2 bg-indigo-600 hover:bg-indigo-500 p-2 rounded text-sm" id="toggleContrast">Alto contraste</button>
+  <button class="w-full bg-red-600 hover:bg-red-500 p-2 rounded text-sm" id="resetAccessibility">Restablecer</button>
+</div>
+<script src="js/main.js"></script>  
 <script src="js/mobile.js"></script>
+<script src="js/accessibility.js"></script>
 </body>
 </html>

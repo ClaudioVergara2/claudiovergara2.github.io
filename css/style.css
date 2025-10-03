@@ -26,6 +26,26 @@ html {
   scroll-margin-top: 150px;
 }
 
-#scrollTopBtn {
-  z-index: 1000;
+/* accesibilidad */
+
+#accessibilityBtn i {
+  font-size: 1.7rem;
+}
+
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast a {
+  color: yellow !important;
+  text-decoration: underline !important;
+}
+
+.font-size-increased {
+  font-size: 1.2rem;
+}
+
+.font-size-decreased {
+  font-size: 0.8rem;
 }
