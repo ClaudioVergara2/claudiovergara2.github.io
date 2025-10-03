@@ -1,7 +1,7 @@
-// Descarga de CV
-document.getElementById('downloadResume').addEventListener('click', () => {
+/* Descarga de CV
+document.getElementById('downloadCV').addEventListener('click', () => {
   try {
-    const fileUrl = '/resources//docs/CurriculumVitae.pdf';
+    const fileUrl = '#';
     const a = document.createElement('a');
     a.href = fileUrl;
     a.download = 'CurriculumVitae.pdf';
@@ -12,7 +12,7 @@ document.getElementById('downloadResume').addEventListener('click', () => {
     console.error('Error al descargar CV:', err);
     alert('No se pudo descargar el CV.');
   }
-});
+});*/
 
 // Botón Scroll to Top
 const btn = document.getElementById('backToTop');
