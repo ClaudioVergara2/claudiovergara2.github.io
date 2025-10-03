@@ -1,19 +1,3 @@
-/* Descarga de CV
-document.getElementById('downloadCV').addEventListener('click', () => {
-  try {
-    const fileUrl = '#';
-    const a = document.createElement('a');
-    a.href = fileUrl;
-    a.download = 'CurriculumVitae.pdf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  } catch (err) {
-    console.error('Error al descargar CV:', err);
-    alert('No se pudo descargar el CV.');
-  }
-});*/
-
 // Botón Scroll to Top
 const btn = document.getElementById('backToTop');
 
@@ -108,7 +92,6 @@ async function loadProjects({simulateError=false} = {}){
 }
 
 loadProjects();
-document.getElementById('loadMoreProjects').addEventListener('click', () => loadProjects({simulateError:false}));
 
 // Accesibilidad
 document.addEventListener('keyup', (e) => { if (e.key === 'Tab') document.body.classList.add('kbd'); });
