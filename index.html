@@ -18,6 +18,7 @@
             <li><a href="#sobremi" class="transition-colors duration-300 hover:text-indigo-400">Sobre mí</a></li>
             <li><a href="#experiencia" class="transition-colors duration-300 hover:text-indigo-400">Experiencia</a></li>
             <li><a href="#proyectos" class="transition-colors duration-300 hover:text-indigo-400">Proyectos</a></li>
+            <li><a href="#contacto" class="transition-colors duration-300 hover:text-indigo-400">Contacto</a></li>
         </ul>
       </div>
       <div class="flex items-center gap-3">
@@ -37,6 +38,7 @@
         <li><a href="#sobremi" class="block py-2 transition-colors duration-300 hover:text-indigo-400"> Sobre mí</a></li>
         <li><a href="#experiencia" class="block py-2 transition-colors duration-300 hover:text-indigo-400"> Experiencia</a></li>
         <li><a href="#proyectos" class="block py-2 transition-colors duration-300 hover:text-indigo-400"> Proyectos</a></li>
+        <li><a href="#contacto" class="block py-2 transition-colors duration-300 hover:text-indigo-400"> Contacto</a></li>
       </ul>  
     </nav>
   </header>
@@ -114,6 +116,17 @@
         </div>
       </div>
     </section>
+    <!-- Contacto -->
+    <div class="my-12 border-t border-gray-700 scroll-mt-16"></div>
+    <section id="contacto" class="mt-16 text-center">
+      <h2 class="text-2xl font-semibold text-white mb-6">Contactame</h2><br>  
+      <div class="flex items-center justify-center gap-2 relative">
+        <span id="email" class="text-lg font-mono bg-gray-800 px-4 py-2 rounded-lg text-gray-200">vergaraclaudio34@gmail.com</span>
+        <button onclick="copiarEmail()" class="text-lg font-mono bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg text-gray-200 shadow-md transition">📋</button>
+        <span id="copyMsg" class="text-green-400 ml-2 hidden">¡Copiado!</span>
+      </div>
+    </section>
+    <div class="my-12 border-t border-gray-700 scroll-mt-16"></div>
     <!-- Experiencia -->
     <section id="experiencia" class="mt-8 scroll-mt-16">
         <div class="flex items-center justify-between">
@@ -175,7 +188,7 @@
       <div id="projectsGrid" class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       </div>
       <div id="projectsError" class="hidden mt-4 text-red-400"></div>
-    </section>  
+    </section>
     <br><br>
     <!-- Footer -->
   <footer class="w-full text-center text-sm text-gray-400 py-6 footer-bg">

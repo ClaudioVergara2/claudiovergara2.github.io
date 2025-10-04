@@ -95,3 +95,12 @@ loadProjects();
 
 // Accesibilidad
 document.addEventListener('keyup', (e) => { if (e.key === 'Tab') document.body.classList.add('kbd'); });
+
+function copiarEmail() {
+  const email = document.getElementById("email").innerText;
+  navigator.clipboard.writeText(email).then(() => {
+    const msg = document.getElementById("copyMsg");
+    msg.classList.remove("hidden");
+    setTimeout(() => msg.classList.add("hidden"), 2000);
+  });
+}
