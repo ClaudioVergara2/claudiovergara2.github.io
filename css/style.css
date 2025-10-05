@@ -3,7 +3,7 @@
 }
 
 .avatar-shadow {
-  box-shadow: 0 8px 30px rgba(44, 6, 78, 0.4);
+  box-shadow: 0 8px 30px rgb(97, 95, 255);
 }
 
 html {
@@ -48,4 +48,30 @@ html {
 
 .font-size-decreased {
   font-size: 0.8rem;
+}
+
+/* GitHub y LinkedIn */
+.img-social a {
+  color: #D1D5DB;
+  border: 1px solid #6B7280;
+  transition: all 0.3s;
+}
+
+.img-social a:hover {
+  background-color: #615FFF;
+  border-color: #615FFF;
+  color: white;
+}
+
+.light-mode .img-social a {
+  color: #000;
+}
+
+#projectsGrid h3 {
+  color: #fff;
+}
+
+#projectsGrid span {
+  background-color: #374151;
+  color: #e5e7eb;
 }

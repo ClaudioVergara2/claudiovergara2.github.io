@@ -1,3 +1,32 @@
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+
+function setTheme(theme) {
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+    document.body.classList.remove('bg-gray-900', 'text-gray-100');
+    document.body.classList.add('bg-white', 'text-gray-900');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+    themeIcon.style.color = 'white';
+    document.body.classList.add('light-mode');
+  } else {
+    document.documentElement.classList.add('dark');
+    document.body.classList.remove('bg-white', 'text-gray-900');
+    document.body.classList.add('bg-gray-900', 'text-gray-100');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+    themeIcon.style.color = 'white';
+    document.body.classList.remove('light-mode');
+  }
+}
+setTheme('dark');
+
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.classList.contains('dark');
+  setTheme(isDark ? 'light' : 'dark');
+});
+
 // Botón Scroll to Top
 const btn = document.getElementById('backToTop');
 
@@ -102,5 +131,21 @@ function copiarEmail() {
     const msg = document.getElementById("copyMsg");
     msg.classList.remove("hidden");
     setTimeout(() => msg.classList.add("hidden"), 2000);
+  });
+}
+
+const socialLinks = document.querySelectorAll('.img-social a');
+
+function updateSocialLinks(theme) {
+  socialLinks.forEach(link => {
+    if (theme === 'light') {
+      link.style.backgroundColor = '#000';
+      link.style.color = 'white';
+      link.style.borderColor = '#000';
+    } else {
+      link.style.backgroundColor = 'transparent';
+      link.style.color = '#D1D5DB';
+      link.style.borderColor = '#6B7280';
+    }
   });
 }
