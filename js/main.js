@@ -74,8 +74,11 @@ function renderProjectCard(p) {
   const div = document.createElement('div');
   div.className = 'p-4 bg-gradient-to-b from-gray-800 to-gray-900 rounded transform transition-transform duration-300 hover:scale-105 hover:shadow-lg';
 
+  const isGitHub = p.url && p.url.includes('github.com');
+  const linkText = isGitHub ? 'Ver repositorio →' : 'Ver proyecto →';
+
   const projectLink = p.url ? `<div class="mt-3">
-      <a href="${p.url}" target="_blank" class="text-indigo-400 text-sm">Ver proyecto →</a>
+      <a href="${p.url}" target="_blank" class="text-indigo-400 text-sm">${linkText}</a>
     </div>` : '';
 
   div.innerHTML = `
@@ -99,7 +102,7 @@ function escapeAttr(s){ return escapeHtml(s); }
 function fetchProjects(simulateError = false) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (simulateError) return reject(new Error('Error simulado al obtener proyectos'));
+      if (simulateError) return reject(new Error('Error al cargar los proyectos'));
       resolve(SAMPLE_PROJECTS);
     }, 600);
   });
@@ -115,7 +118,7 @@ async function loadProjects({simulateError=false} = {}){
   } catch (err) {
     console.error('No se pudo cargar proyectos:', err);
     projectsGrid.innerHTML = '';
-    projectsError.textContent = 'No se pudieron cargar los proyectos. Intenta recargar.';
+    projectsError.textContent = 'Error al cargar los proyectos. Intenta recargar.';
     projectsError.classList.remove('hidden');
   }
 }
