@@ -58,6 +58,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Proyectos
 const projectsGrid = document.getElementById('projectsGrid');
 const projectsError = document.getElementById('projectsError');
+const projectsPagination = document.createElement('div');
+projectsPagination.className = 'flex justify-center gap-2 mt-6';
+projectsGrid.after(projectsPagination);
+
+const PROJECTS_PER_PAGE = 6;
+let currentPage = 1;
 
 const SAMPLE_PROJECTS = [
   { id: 1, title: 'Docentes en Línea', desc: 'Trabajé en el desarrollo de un nuevo sitio web para los docentes, incorporando sus respectivos contenidos, como imágenes, información y enlaces. Además, configuré un chatbot basado en el motor de OpenAI y realicé la implementación de accesibilidad para garantizar una experiencia inclusiva para todos los usuarios.', tech: ['WordPress', 'PHP', 'API OpenAI', 'Accesibilidad','SEO', 'Google Analytics', 'Chatbot'], url: 'https://docentesenlinea.udec.cl/', img: 'resources/img/docentelinea.png' },
@@ -65,8 +71,8 @@ const SAMPLE_PROJECTS = [
   { id: 3, title: 'Campus Naturaleza', desc: 'Realice la actualización y mantenimiento del sitio web el cual estaba desarrollado en wordpress. Además de implementar la traducción al idioma inglés.', tech: ['Wordpress', 'SEO', 'Google Analytics'], url: 'https://campusnaturaleza.udec.cl/', img: 'resources/img/CampusNaturaleza.jpeg' },
   { id: 4, title: 'ATE CFRD UdeC', desc: 'Programé una nueva página web para la venta de cursos para profesores proporcionados por ATE CFRD UDEC, mediante Wordpress + Woocomerce conectado con Moodle.', tech: ['WordPress', 'Woocomerce', 'Moodle'], img: 'resources/img/ATE.jpg'},
   { id: 5, title: 'KGB Logistic', desc: 'Participé en el equipo de desarrollo de KGB, contribuyendo a la optimización del rendimiento y mejoras funcionales de su sitio web. Ademas de implementar una nueva vista para sus certificaciónes.', tech: ['WordPress'], url: 'https://www.kgblogistic.com/', img: 'resources/img/KGB.png' },
-  { id: 6, title: 'ConceUncover', desc: 'En el proyecto de título ConceUncover, me encargué de implementar mejoras estéticas en los popups del sitio web, ajustando la paleta de colores, los bordes y deshabilitando la opción de cierre manual para dirigir adecuadamente la interacción del usuario.', tech: ['Laravel','PHP','CSS','JavaScript'], url: 'https://github.com/MarTofuz/ConceUncover', img: 'resources/img/repositorio.png' },
-  { id: 7, title: 'IHPE LTDA', desc: 'Desarrollé un sitio web para la pyme IHPE LTDA, el cual le permite realizar ventas de productos de aseo y limpieza destinados al hogar en colaboración con un equipo de trabajo compuesto por cuatro integrantes, asumiendo los roles de Jefe de Proyecto y Desarrollador. Como líder del proyecto, coordiné las actividades del equipo, asigné responsabilidades y garantizé que el desarrollo siguiera los objetivos establecidos. Utilizamos WordPress y Woocommerce para crear un sitio web funcional y atractivo. Trabajando en conjunto con el equipo, llevamos a cabo la personalización del diseño, la integración de la plataforma de comercio electrónico, y la optimización del rendimiento del sitio.', tech: ['WordPress','Woocomerce', 'Scrum'], url: 'http://ihpeltda.cl/', img: 'resources/img/IHPE LTDA.jpg'},
+  { id: 6, title: 'IHPE LTDA', desc: 'Desarrollé un sitio web para la pyme IHPE LTDA, el cual le permite realizar ventas de productos de aseo y limpieza destinados al hogar en colaboración con un equipo de trabajo compuesto por cuatro integrantes, asumiendo los roles de Jefe de Proyecto y Desarrollador. Como líder del proyecto, coordiné las actividades del equipo, asigné responsabilidades y garantizé que el desarrollo siguiera los objetivos establecidos. Utilizamos WordPress y Woocommerce para crear un sitio web funcional y atractivo. Trabajando en conjunto con el equipo, llevamos a cabo la personalización del diseño, la integración de la plataforma de comercio electrónico, y la optimización del rendimiento del sitio.', tech: ['WordPress','Woocomerce', 'Scrum'], url: 'http://ihpeltda.cl/', img: 'resources/img/IHPE LTDA.jpg'},
+  { id: 7, title: 'ConceUncover', desc: 'En el proyecto de título ConceUncover, me encargué de implementar mejoras estéticas en los popups del sitio web, ajustando la paleta de colores, los bordes y deshabilitando la opción de cierre manual para dirigir adecuadamente la interacción del usuario.', tech: ['Laravel','PHP','CSS','JavaScript'], url: 'https://github.com/MarTofuz/ConceUncover', img: 'resources/img/repositorio.png' },
   { id: 8, title: 'CoffeeTime', desc: 'Es un proyecto colaborativo desarrollado en Laravel, que permite a los usuarios registrarse e iniciar sesión para gestionar productos. Toda la información se almacena en una base de datos.', tech: ['Laravel','PHP','CSS','JavaScript'], url: 'https://github.com/Jossszz/CoffeeTime', img: 'resources/img/repositorio.png'},
 ];
 
@@ -104,7 +110,7 @@ function fetchProjects(simulateError = false) {
     setTimeout(() => {
       if (simulateError) return reject(new Error('Error al cargar los proyectos'));
       resolve(SAMPLE_PROJECTS);
-    }, 600);
+    }, 400);
   });
 }
 
@@ -113,14 +119,89 @@ async function loadProjects({simulateError=false} = {}){
   projectsGrid.innerHTML = '<p class="text-gray-400">Cargando proyectos...</p>';
   try {
     const data = await fetchProjects(simulateError);
-    projectsGrid.innerHTML = '';
-    data.forEach(p => projectsGrid.appendChild(renderProjectCard(p)));
+    renderProjectsPage(data, currentPage);
+    renderPagination(data);
   } catch (err) {
-    console.error('No se pudo cargar proyectos:', err);
+    console.error('No se pudo cargar los proyectos:', err);
     projectsGrid.innerHTML = '';
     projectsError.textContent = 'Error al cargar los proyectos. Intenta recargar.';
     projectsError.classList.remove('hidden');
   }
+}
+
+// Paginación
+function renderProjectsPage(data, page) {
+  projectsGrid.innerHTML = '';
+  const start = (page - 1) * PROJECTS_PER_PAGE;
+  const end = start + PROJECTS_PER_PAGE;
+  const pageItems = data.slice(start, end);
+  pageItems.forEach(p => projectsGrid.appendChild(renderProjectCard(p)));
+}
+
+function renderPagination(data) {
+  const totalPages = Math.ceil(data.length / PROJECTS_PER_PAGE);
+  const ul = document.createElement('ul');
+  ul.className = 'flex justify-center gap-2 mt-6';
+  const prev = document.createElement('li');
+  const prevButton = document.createElement('button');
+  prevButton.innerHTML = '<i class="fa-solid fa-chevron-left mr-1"></i>';
+  prevButton.className =
+    'px-3 py-1 border rounded transition-all duration-200 ' +
+    (currentPage === 1
+      ? 'opacity-50 cursor-not-allowed bg-gray-300 text-gray-600'
+      : 'hover:bg-indigo-600 hover:text-white text-gray-800 bg-white');
+  prev.appendChild(prevButton);
+
+  if (currentPage > 1) {
+    prevButton.addEventListener('click', () => {
+      currentPage--;
+      renderProjectsPage(data, currentPage);
+      renderPagination(data);
+    });
+  }
+
+  ul.appendChild(prev);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const li = document.createElement('li');
+    const pageBtn = document.createElement('button');
+    pageBtn.textContent = i;
+    pageBtn.className =
+      'px-3 py-1 border rounded transition-all duration-200 ' +
+      (i === currentPage
+        ? 'bg-indigo-600 text-white font-semibold'
+        : 'hover:bg-indigo-500 hover:text-white text-gray-800 bg-white');
+    pageBtn.addEventListener('click', () => {
+      currentPage = i;
+      renderProjectsPage(data, currentPage);
+      renderPagination(data);
+    });
+    li.appendChild(pageBtn);
+    ul.appendChild(li);
+  }
+
+  const next = document.createElement('li');
+  const nextButton = document.createElement('button');
+  nextButton.innerHTML = '<i class="fa-solid fa-chevron-right ml-1"></i>';
+  nextButton.className =
+    'px-3 py-1 border rounded transition-all duration-200 ' +
+    (currentPage === totalPages
+      ? 'opacity-50 cursor-not-allowed bg-gray-300 text-gray-600'
+      : 'hover:bg-indigo-600 hover:text-white text-gray-800 bg-white');
+  next.appendChild(nextButton);
+
+  if (currentPage < totalPages) {
+    nextButton.addEventListener('click', () => {
+      currentPage++;
+      renderProjectsPage(data, currentPage);
+      renderPagination(data);
+    });
+  }
+
+  ul.appendChild(next);
+
+  projectsPagination.innerHTML = '';
+  projectsPagination.appendChild(ul);
 }
 
 loadProjects();
