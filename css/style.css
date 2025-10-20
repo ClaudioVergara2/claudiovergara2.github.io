@@ -75,3 +75,63 @@ html {
   background-color: #374151;
   color: #e5e7eb;
 }
+
+#modelos-llm i, #sistemas-linux i {
+  font-size: 24px;
+  margin: 0 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#modelos-llm .claude  { color: #FF6F61; }
+#modelos-llm .GCopilot  { fill: #4285F4; }
+#modelos-llm .chatgpt { color: #10A37F; }
+#modelos-llm .gemini  { color: #4285F4; }
+#modelos-llm .Perplexity { fill: #9b9293; }
+
+#sistemas-linux .Terminal { fill: #ada6a6; }
+#sistemas-linux .ubuntu { color: #E95420; }
+#sistemas-linux .debian { fill: #A81D33; }
+
+#modelos-llm i:hover, #sistemas-linux i:hover, #modelos-llm svg:hover{
+  transform: scale(1.3);
+}
+
+#modelos-llm svg{
+    margin: 0 8px;
+}
+
+#herramientas-icons svg, #herramientas-icons i, #modelos-llm svg, #sistemas-linux svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+#herramientas-icons svg:hover , #herramientas-icons i:hover, #sistemas-linux svg:hover{
+  transform: scale(1.1);
+}
+
+#herramientas-icons .vs      { color: #007ACC; }
+#herramientas-icons .html    { color: #E34F26; }
+#herramientas-icons .php     { color: #777BB4; }
+#herramientas-icons .js      { color: #F7DF1E; }
+#herramientas-icons .css     { color: #264DE4; }
+#herramientas-icons .lar     { color: #FF2D20; }
+#herramientas-icons .boot    { color: #7952B3; }
+#herramientas-icons .tail    { color: #38B2AC; }
+#herramientas-icons .C1     { fill: #512BD4; }
+#herramientas-icons .C2     { fill: #00599C; }
+#herramientas-icons .NetBeans { fill: #00d58e; }
+#herramientas-icons .android { color: #3DDC84; }
+#herramientas-icons .moodle { fill: #F2A900; } 
+#herramientas-icons .MySQL  { fill: #4479A1; }
+#herramientas-icons .xampp   { fill: #d6912a; }
+#herramientas-icons .aws     { color: #FF9900; }
+#herramientas-icons .oracle  { color: #F80000; }
+#herramientas-icons .postman { color: #FF6C37; }  
+#herramientas-icons .filezilla { fill: #EE2C2C; }
+#herramientas-icons .wd      { color: #21759B; }
+#herramientas-icons .Woo     { fill: #96588A; }
+#herramientas-icons .Elementor { fill: #ae0fbc; }
+#herramientas-icons .vm      { color: #607078; }
+#herramientas-icons .notion  { color: #868484; }
+#herramientas-icons .Git     { fill: #F05032; }
